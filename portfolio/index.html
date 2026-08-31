@@ -1,0 +1,646 @@
+<title>Mashkhal Abdalwahid Sidiq</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700&family=IBM+Plex+Mono:wght@400;500;600&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<style>
+  :root {
+    --paper:      #EAEEF2;
+    --surface:    #F5F7F9;
+    --ink:        #101D28;
+    --graphite:   #5D6C7A;
+    --rule:       #C0CBD5;
+    --rule-faint: #D8DFE6;
+    --signal:     #1F5FD0;
+    --signal-dim: #4A7FDD;
+
+    --display: "Archivo", "Helvetica Neue", Arial, sans-serif;
+    --prose:   "Source Serif 4", Georgia, "Times New Roman", serif;
+    --data:    "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
+
+    --rail: 8.5rem;
+    --measure: 66ch;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --paper:      #0C161F;
+      --surface:    #13202C;
+      --ink:        #DEE6ED;
+      --graphite:   #8A9AA8;
+      --rule:       #2C3D4C;
+      --rule-faint: #1E2C39;
+      --signal:     #6FA0F0;
+      --signal-dim: #4C7FD4;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --paper:      #0C161F;
+    --surface:    #13202C;
+    --ink:        #DEE6ED;
+    --graphite:   #8A9AA8;
+    --rule:       #2C3D4C;
+    --rule-faint: #1E2C39;
+    --signal:     #6FA0F0;
+    --signal-dim: #4C7FD4;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--prose);
+    font-size: 1rem;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page {
+    max-width: 62rem;
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 4.5rem) clamp(1.25rem, 4vw, 3rem) 5rem;
+  }
+
+  /* ---- masthead ---- */
+
+  .masthead {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding-bottom: 2rem;
+    border-bottom: 2px solid var(--ink);
+  }
+
+  .eyebrow {
+    font-family: var(--data);
+    font-size: 0.7rem;
+    font-weight: 500;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  h1 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(2.1rem, 6.5vw, 3.9rem);
+    line-height: 1.02;
+    letter-spacing: -0.028em;
+    margin: 0;
+    text-wrap: balance;
+  }
+
+  .role {
+    font-family: var(--display);
+    font-weight: 500;
+    font-size: clamp(1rem, 2.2vw, 1.3rem);
+    line-height: 1.3;
+    letter-spacing: -0.01em;
+    color: var(--signal);
+    margin: 0;
+    max-width: 34ch;
+  }
+
+  .locus {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.4rem;
+    font-family: var(--data);
+    font-size: 0.78rem;
+    color: var(--graphite);
+  }
+
+  .locus a { color: var(--graphite); text-decoration-color: var(--rule); text-underline-offset: 3px; }
+  .locus a:hover { color: var(--signal); text-decoration-color: currentColor; }
+
+  /* ---- measured figures ---- */
+
+  .readout {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(11rem, 1fr));
+    gap: 0;
+    margin: 0;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .figure {
+    padding: 1.6rem 1.2rem 1.5rem 0;
+    border-right: 1px solid var(--rule-faint);
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+
+  .figure:last-child { border-right: none; }
+
+  .figure dt {
+    font-family: var(--data);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--graphite);
+    order: 2;
+    line-height: 1.4;
+    max-width: 20ch;
+  }
+
+  .figure dd {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(1.75rem, 4.4vw, 2.5rem);
+    line-height: 1;
+    letter-spacing: -0.035em;
+    font-variant-numeric: tabular-nums;
+    color: var(--signal);
+    margin: 0;
+    order: 1;
+  }
+
+  .figure dd .unit {
+    font-size: 0.42em;
+    font-weight: 500;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    margin-left: 0.25em;
+  }
+
+  /* ---- section scaffolding ---- */
+
+  section {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: 0 2.5rem;
+    padding: 2.75rem 0 0;
+  }
+
+  .rail {
+    font-family: var(--data);
+    font-size: 0.68rem;
+    font-weight: 500;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--graphite);
+    line-height: 1.6;
+    padding-top: 0.45rem;
+  }
+
+  .rail .count { display: block; color: var(--signal-dim); letter-spacing: 0.06em; }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.28rem;
+    letter-spacing: -0.018em;
+    margin: 0 0 1.4rem;
+    padding-bottom: 0.55rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  .body { min-width: 0; }
+
+  .lede {
+    font-size: 1.12rem;
+    line-height: 1.62;
+    max-width: var(--measure);
+    margin: 0;
+  }
+
+  .lede strong { font-weight: 600; color: var(--signal); }
+
+  /* ---- entries ---- */
+
+  .entries { display: flex; flex-direction: column; gap: 1.9rem; }
+
+  .entry { display: flex; flex-direction: column; gap: 0.5rem; }
+
+  .entry-head {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 0.2rem 1.5rem;
+  }
+
+  .entry-title {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: 1.02rem;
+    letter-spacing: -0.012em;
+    margin: 0;
+  }
+
+  .entry-where {
+    display: block;
+    font-family: var(--prose);
+    font-weight: 400;
+    font-size: 0.95rem;
+    color: var(--graphite);
+    margin-top: 0.1rem;
+  }
+
+  .entry-when {
+    font-family: var(--data);
+    font-size: 0.72rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    color: var(--graphite);
+    font-variant-numeric: tabular-nums;
+    white-space: nowrap;
+  }
+
+  .entry ul {
+    margin: 0.3rem 0 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.45rem;
+    max-width: var(--measure);
+  }
+
+  .entry li {
+    position: relative;
+    padding-left: 1.1rem;
+    line-height: 1.55;
+  }
+
+  .entry li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0.72em;
+    width: 0.5rem;
+    height: 1px;
+    background: var(--signal);
+  }
+
+  .entry li b {
+    font-weight: 600;
+    font-variant-numeric: tabular-nums;
+  }
+
+  /* ---- publications ---- */
+
+  .pubs { display: flex; flex-direction: column; gap: 1.5rem; }
+
+  .pub-group { display: flex; flex-direction: column; gap: 0.75rem; }
+
+  .pub-status {
+    display: inline-flex;
+    align-items: center;
+    align-self: flex-start;
+    gap: 0.45rem;
+    font-family: var(--data);
+    font-size: 0.65rem;
+    font-weight: 600;
+    letter-spacing: 0.13em;
+    text-transform: uppercase;
+    color: var(--graphite);
+  }
+
+  .pub-status::before {
+    content: "";
+    width: 0.45rem;
+    height: 0.45rem;
+    border: 1px solid var(--signal);
+    background: var(--signal);
+  }
+
+  .pub-status.review::before { background: transparent; }
+
+  .pub-group ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+    max-width: var(--measure);
+  }
+
+  .pub-group li { line-height: 1.5; }
+
+  .pub-venue {
+    display: block;
+    font-family: var(--data);
+    font-size: 0.72rem;
+    color: var(--graphite);
+    margin-top: 0.15rem;
+  }
+
+  /* ---- skills ---- */
+
+  .stack { display: flex; flex-direction: column; gap: 1.1rem; }
+
+  .stack-row {
+    display: grid;
+    grid-template-columns: 9rem minmax(0, 1fr);
+    gap: 0.25rem 1.5rem;
+    padding-bottom: 1.1rem;
+    border-bottom: 1px solid var(--rule-faint);
+  }
+
+  .stack-row:last-child { border-bottom: none; padding-bottom: 0; }
+
+  .stack-row dt {
+    font-family: var(--data);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--graphite);
+    padding-top: 0.2rem;
+  }
+
+  .stack-row dd {
+    margin: 0;
+    font-family: var(--data);
+    font-size: 0.82rem;
+    line-height: 1.75;
+    color: var(--ink);
+  }
+
+  /* ---- education / notes ---- */
+
+  .plain { margin: 0; padding: 0; list-style: none; display: flex; flex-direction: column; gap: 1.05rem; }
+
+  .plain li { display: flex; flex-direction: column; gap: 0.15rem; max-width: var(--measure); }
+
+  .plain .entry-when { font-size: 0.7rem; }
+
+  /* ---- contact ---- */
+
+  .contact {
+    margin-top: 3.5rem;
+    padding-top: 1.75rem;
+    border-top: 2px solid var(--ink);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem 2.5rem;
+    align-items: baseline;
+  }
+
+  .contact a {
+    font-family: var(--data);
+    font-size: 0.85rem;
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--signal);
+    padding-bottom: 2px;
+  }
+
+  .contact a:hover { color: var(--signal); }
+
+  a:focus-visible {
+    outline: 2px solid var(--signal);
+    outline-offset: 3px;
+    border-radius: 1px;
+  }
+
+  @media (max-width: 46rem) {
+    section { grid-template-columns: minmax(0, 1fr); gap: 0; }
+    .rail { padding: 0 0 0.75rem; }
+    .stack-row { grid-template-columns: minmax(0, 1fr); }
+    .figure { padding-right: 0.9rem; }
+  }
+</style>
+
+<div class="page">
+
+  <header class="masthead">
+    <p class="eyebrow">Tianjin, China &middot; UTC+8 &middot; Available remote</p>
+    <h1>Mashkhal Abdalwahid&nbsp;Sidiq</h1>
+    <p class="role">Data engineer working on real-time systems, query optimisation and GPU inference.</p>
+    <p class="locus">
+      <a href="mailto:mashxal.abdwl@gmail.com">mashxal.abdwl@gmail.com</a>
+      <a href="https://github.com/Mashxal97">github.com/Mashxal97</a>
+      <a href="https://www.linkedin.com/in/mashkhal-abdalwahid/">linkedin.com/in/mashkhal-abdalwahid</a>
+    </p>
+  </header>
+
+  <dl class="readout">
+    <div class="figure">
+      <dt>Query throughput sustained in OpenMLDB benchmarks</dt>
+      <dd>12,500<span class="unit">QPS</span></dd>
+    </div>
+    <div class="figure">
+      <dt>Latency for real-time feature computation at that load</dt>
+      <dd>&lt;1<span class="unit">ms</span></dd>
+    </div>
+    <div class="figure">
+      <dt>Backend pipeline throughput gained through SQL tuning</dt>
+      <dd>+25<span class="unit">%</span></dd>
+    </div>
+    <div class="figure">
+      <dt>System downtime removed by fixing recurring failures</dt>
+      <dd>&minus;30<span class="unit">%</span></dd>
+    </div>
+  </dl>
+
+  <section>
+    <p class="rail">Focus</p>
+    <div class="body">
+      <p class="lede">I build the layer where <strong>data has to arrive on time</strong> &mdash; SQL and feature-computation paths tuned for sub-millisecond serving, ETL pipelines that hold up under production load, and perception models compiled down to run on real hardware. Currently completing a PhD in Control Science &amp; Engineering at Tianjin University on real-time perception and large-scale data processing, with four years of prior engineering practice including a remote role for a US company. I work in four languages across engineering and stakeholder settings.</p>
+    </div>
+  </section>
+
+  <section>
+    <p class="rail">Experience<span class="count">2019 &rarr; now</span></p>
+    <div class="body">
+      <h2>Experience</h2>
+      <div class="entries">
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Doctoral Researcher &mdash; Real-Time Systems &amp; Perception
+              <span class="entry-where">Tianjin University, Tianjin, China</span></h3>
+            <span class="entry-when">2024 &mdash; Present</span>
+          </div>
+          <ul>
+            <li>Designed and benchmarked SQL+ML query optimisation techniques in OpenMLDB, reaching <b>12,500 QPS</b> at sub-millisecond latency for real-time feature computation.</li>
+            <li>Built DAGNet, a dual attention-guided feature aggregation network for UAV-based object localisation, optimised for real-time GPU inference.</li>
+            <li>Deployed inference pipelines with CUDA, TensorRT and ONNX; packaged and shipped via Docker for reproducible evaluation.</li>
+            <li>Authored two papers under review on real-time feature computation and UAV object localisation.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Graduate Researcher &mdash; Software Engineering
+              <span class="entry-where">Nankai University, Tianjin, China</span></h3>
+            <span class="entry-when">2022 &mdash; 2024</span>
+          </div>
+          <ul>
+            <li>Completed MSc in Software Engineering (GPA 3.5/4.0), concentrating on data-intensive systems and applied machine learning.</li>
+            <li>Published peer-reviewed research on link analysis in anti-money laundering systems and on graph database design for large-scale data analysis.</li>
+            <li>Built and evaluated data processing pipelines combining SQL optimisation with machine learning workloads.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Senior Software Engineer <span style="font-weight:500;color:var(--signal)">(Remote)</span>
+              <span class="entry-where">Codbel Co., Palo Alto, CA, USA</span></h3>
+            <span class="entry-when">2021 &mdash; 2022</span>
+          </div>
+          <ul>
+            <li>Improved backend data pipeline processing efficiency by <b>25%</b> through SQL query optimisation and architectural changes.</li>
+            <li>Developed data-driven web applications with ASP.NET, C#, SQL Server and Python, including REST APIs.</li>
+            <li>Built automated workflows for data handling and reporting, cutting manual reporting effort across the team.</li>
+            <li>Translated business requirements into technical specifications with cross-functional stakeholders.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">Senior IT Specialist
+              <span class="entry-where">Softkeys Co., Iraq</span></h3>
+            <span class="entry-when">2020 &mdash; 2021</span>
+          </div>
+          <ul>
+            <li>Reduced system downtime by <b>30%</b> by diagnosing recurring operational failures and implementing preventive fixes.</li>
+            <li>Managed IT operations and data management activities across multiple departments.</li>
+          </ul>
+        </article>
+
+        <article class="entry">
+          <div class="entry-head">
+            <h3 class="entry-title">IT Assistant
+              <span class="entry-where">Peshang Institute, Iraq</span></h3>
+            <span class="entry-when">2019 &mdash; 2020</span>
+          </div>
+          <ul>
+            <li>Delivered IT support and system maintenance, and improved technical issue response time through structured support workflows.</li>
+          </ul>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="rail">Publications<span class="count">4 out &middot; 2 in review</span></p>
+    <div class="body">
+      <h2>Publications</h2>
+      <div class="pubs">
+
+        <div class="pub-group">
+          <span class="pub-status review">Under review</span>
+          <ol>
+            <li>DAGNet: A Dual Attention-Guided Feature Aggregation Network for UAV-Based Object Localization.</li>
+            <li>Optimization Techniques for SQL+ML Queries: A Performance Analysis of Real-Time Feature Computation in OpenMLDB.</li>
+          </ol>
+        </div>
+
+        <div class="pub-group">
+          <span class="pub-status">Published</span>
+          <ol>
+            <li>Optimization Techniques for SQL+ML Queries: A Performance Analysis of Real-Time Feature Computation in OpenMLDB.
+              <span class="pub-venue">International Journal of Database Management Systems &middot; 2025</span></li>
+            <li>Implementing a Link Analysis Technique in Anti-Money Laundering Systems.
+              <span class="pub-venue">NAAR &middot; 2024</span></li>
+            <li>Graph Databases: Revolutionizing Database Design and Data Analysis.
+              <span class="pub-venue">British Journal of Applied Science &amp; Technology &middot; 2024</span></li>
+            <li>Evaluating Online Assessment Strategies in E-Learning Environments.
+              <span class="pub-venue">NAAR &middot; 2023</span></li>
+          </ol>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <p class="rail">Stack</p>
+    <div class="body">
+      <h2>Technical stack</h2>
+      <dl class="stack">
+        <div class="stack-row">
+          <dt>Languages</dt>
+          <dd>SQL &middot; Python &middot; C++ &middot; C#</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Data</dt>
+          <dd>ETL &middot; data modelling &middot; data integration &middot; workflow automation &middot; real-time processing &middot; query optimisation &middot; performance tuning &middot; benchmarking</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Databases</dt>
+          <dd>SQL Server &middot; PostgreSQL &middot; MySQL &middot; Neo4j &middot; OpenMLDB</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Infra</dt>
+          <dd>Docker &middot; AWS &middot; Google Cloud &middot; Git &middot; GitHub &middot; GitLab &middot; CI/CD &middot; Linux</dd>
+        </div>
+        <div class="stack-row">
+          <dt>ML</dt>
+          <dd>PyTorch &middot; TensorFlow &middot; OpenCV &middot; CUDA &middot; TensorRT &middot; ONNX &middot; NumPy &middot; computer vision &middot; object detection &middot; real-time inference</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Reporting</dt>
+          <dd>Power BI &middot; dashboard development &middot; KPI reporting &middot; data visualisation &middot; Excel</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <p class="rail">Education</p>
+    <div class="body">
+      <h2>Education</h2>
+      <ul class="plain">
+        <li>
+          <div class="entry-head">
+            <h3 class="entry-title">PhD, Control Science &amp; Engineering
+              <span class="entry-where">Tianjin University, China &mdash; AI systems, real-time data processing, UAV perception, computer vision</span></h3>
+            <span class="entry-when">2024 &mdash; Exp. 2028</span>
+          </div>
+        </li>
+        <li>
+          <div class="entry-head">
+            <h3 class="entry-title">MSc, Software Engineering
+              <span class="entry-where">Nankai University, China &mdash; GPA 3.5 / 4.0</span></h3>
+            <span class="entry-when">2022 &mdash; 2024</span>
+          </div>
+        </li>
+        <li>
+          <div class="entry-head">
+            <h3 class="entry-title">BSc, Computer Science
+              <span class="entry-where">University of Sulaimani, Iraq</span></h3>
+            <span class="entry-when">2016 &mdash; 2020</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <p class="rail">Also</p>
+    <div class="body">
+      <h2>Languages, awards &amp; certification</h2>
+      <dl class="stack">
+        <div class="stack-row">
+          <dt>Languages</dt>
+          <dd>Kurdish (native) &middot; English (fluent) &middot; Arabic (intermediate) &middot; Chinese (HSK 3)</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Awards</dt>
+          <dd>Outstanding Student Award, Tianjin University (2024) &middot; International Promotion Ambassador, openKylin open-source community (2024&ndash;2026) &middot; Senior Consultant, Tianjin HR Service Industrial Park (2023)</dd>
+        </div>
+        <div class="stack-row">
+          <dt>Certification</dt>
+          <dd>Data Analysis and Visualization with Microsoft Power BI (Nanodegree) &mdash; Udacity, 2022</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+  <footer class="contact">
+    <a href="mailto:mashxal.abdwl@gmail.com">mashxal.abdwl@gmail.com</a>
+    <a href="https://github.com/Mashxal97">GitHub</a>
+    <a href="https://www.linkedin.com/in/mashkhal-abdalwahid/">LinkedIn</a>
+  </footer>
+
+</div>
